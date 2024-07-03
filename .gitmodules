@@ -1,0 +1,10 @@
+[submodule "tock"]
+	path = tock
+	url = https://github.com/tock/tock.git
+[submodule "libtock-c"]
+	path = libtock-c
+	url = https://github.com/tock/libtock-c.git
+[submodule "tockloader"]
+	path = tockloader
+	url = https://github.com/tyler-potyondy/tockloader.git
+	branch = jlink-selector
