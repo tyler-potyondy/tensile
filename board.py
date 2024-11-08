@@ -47,7 +47,7 @@ class Board:
         
         # Build Tock kernel.
         self.log_info(f"[BUILDING] Tock Kernel {self.kernel_path}...")
-        self.log_info(sh.make("-C", self.kernel_path, _err_to_out=True))
+        self.log_info(sh.make("-j", "2", "-C", self.kernel_path, _err_to_out=True))
         self.log_info(f"[BUILDING -- COMPLETE] Tock Kernel {self.kernel_path}.")
         
         # Flash Tock kernel to board.
@@ -70,7 +70,7 @@ class Board:
 
         # Build libtock-c app.
         self.log_info(f"[BUILDING] libtock-c app {self.app_name}...")
-        self.log_info(sh.make("-C", self.libtock_path, _err_to_out=True))
+        self.log_info(sh.make("-j", "2", "-C", self.libtock_path, _err_to_out=True))
         self.log_info(f"[BUILDING -- COMPLETE] {self.app_name}.")
 
         # Flash libtock-c app to board.
